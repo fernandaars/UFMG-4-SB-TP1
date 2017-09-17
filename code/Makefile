@@ -2,9 +2,7 @@
 #Nome: simulador.c
 #Autor: Fernanda Aparecida Rodrigues Silva
 #Disciplina: Software Básico
-#
-#Descrição: Simulador
-#
+#Descrição: Makefile
 #Última Alteração: 11/09/2017
 #
 
@@ -13,14 +11,14 @@ CC = gcc
 DEPENDENCIAS_M2 = M2.c
 OBJETOS_M2 = M2.o
 
-DEPENDENCIAS_R2 = LISTA.h GRAFO.h FLUXO.h main.c
-OBJETOS_R2 = main.o LISTA.o GRAFO.o FLUXO.o
+DEPENDENCIAS_R2 = R2.c
+OBJETOS_R2 = R2.o
 
-DEPENDENCIAS_S2 = LISTA.h GRAFO.h FLUXO.h main.c
-OBJETOS_S2 = main.o LISTA.o GRAFO.o FLUXO.o
+DEPENDENCIAS_S2 = S2.c
+OBJETOS_S2 = S2.o
 
-DEPENDENCIAS_M4 = LISTA.h GRAFO.h FLUXO.h main.c
-OBJETOS_M4 = main.o LISTA.o GRAFO.o FLUXO.o
+DEPENDENCIAS_M4 = M4.c
+OBJETOS_M4 = M4.o
 
 # Compilação do Simulador
 %.o: %.c $(DEPENDENCIAS_M2)

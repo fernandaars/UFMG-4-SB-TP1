@@ -1,10 +1,8 @@
 /*
-Nome: simulador.c
+Nome: R2.c
 Autor: Fernanda Aparecida Rodrigues Silva
 Disciplina: Software Básico
-
-Descrição: Simulador
-
+Descrição: Linker de Arquivos em Linguagem LR2 e LM2
 Última Alteração: 11/09/2017
 */
 
@@ -13,7 +11,6 @@ Descrição: Simulador
 #include <strings.h>
 #include <stdbool.h>
 
-
-
-
 int main(int argc, char *argv[]){
+	return 0;
+}

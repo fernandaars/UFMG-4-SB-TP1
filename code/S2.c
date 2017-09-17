@@ -1,10 +1,8 @@
 /*
-Nome: simulador.c
+Nome: S2.c
 Autor: Fernanda Aparecida Rodrigues Silva
 Disciplina: Software Básico
-
-Descrição: Simulador
-
+Descrição: Montador da Linguagem LS2 para a Linguagem LM2
 Última Alteração: 11/09/2017
 */
 
