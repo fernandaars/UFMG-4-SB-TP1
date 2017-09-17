@@ -1,3 +1,13 @@
+/*
+Nome: simulador.c
+Autor: Fernanda Aparecida Rodrigues Silva
+Disciplina: Software Básico
+
+Descrição: Simulador
+
+Última Alteração: 11/09/2017
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <strings.h>
@@ -7,7 +17,7 @@
 #define TAM_INSTRUCAO 2
 #define TAM_LINHA 40
 
-int PC, AC;
+int PC, AC, RX, RC;
 int memoria[TAM_MEMORIA];
 
 void carregador(char *nomeArquivoEntrada){
@@ -27,7 +37,7 @@ void carregador(char *nomeArquivoEntrada){
     		pos++;
    		}
 	}
-	PC = AC = 0;
+	PC = AC = RX = RC = 0;
 }
 
 void simulador(){
@@ -50,6 +60,18 @@ void simulador(){
 			case 9 : PC = (AC < 0) ? memoria[posAtual] : PC;	
 			case 10: PC = (AC == 0)? memoria[posAtual] : PC;
 			case 11: parar = true;
+			case 12: RX = memoria[posAtual];
+			case 13: memoria[posAtual] = RX;
+			case 14: AC = RX; RX++;
+			case 15: RX = AC; RX++;
+			case 16: RC = memoria[posAtual];
+			case 17: RC--; PC = (RC > 0) ? memoria[posAtual] : PC;
+			case 18: 
+			case 19:
+			case 20:
+			case 21:
+			case 22:
+			case 23:
 		}
 		if(flag == true) break;
 	}
