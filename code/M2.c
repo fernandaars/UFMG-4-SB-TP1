@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <strings.h>
+#include <stdbool.h>
 
 #define TAM_MEMORIA 1024
 #define TAM_INSTRUCAO 2
@@ -32,21 +33,25 @@ void carregador(char *nomeArquivoEntrada){
 void simulador(){
 	int i;
 	for(i=0; i<TAM_MEMORIA; i++){
+		bool parar = false;
 		int posAtual = PC;
 		int conteudoAtual = memoria[posAtual];
+
+		PC += 2;
 		switch(posAtual){
-			case 1: AC = memoria[posAtual+1];
-			case 2: 
-			case 3:
-			case 4:
-			case 5:
-			case 6:
-			case 7:
-			case 8:
-			case 9:
-			case 10:
-			case 11:
+			case 1 : AC = memoria[posAtual];
+			case 2 : memoria[posAtual] = AC;
+			case 3 : AC += memoria[posAtual];
+			case 4 : AC -= memoria[posAtual];
+			case 5 : scanf("%d", &memoria[posAtual]);
+			case 6 : printf("%d\n", memoria[posAtual]);
+			case 7 : PC = memoria[posAtual];
+			case 8 : PC = (AC > 0) ? memoria[posAtual] : PC; 
+			case 9 : PC = (AC < 0) ? memoria[posAtual] : PC;	
+			case 10: PC = (AC == 0)? memoria[posAtual] : PC;
+			case 11: parar = true;
 		}
+		if(flag == true) break;
 	}
 }
 
