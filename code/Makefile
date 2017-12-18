@@ -3,22 +3,20 @@
 #Autor: Fernanda Aparecida Rodrigues Silva
 #Disciplina: Software Básico
 #Descrição: Makefile
-#Última Alteração: 11/09/2017
 #
 
 # Varíaveis e Arquivos
 CC = gcc
-DEPENDENCIAS_M2 = M2.c
+DEPENDENCIAS_M2 = utils.h M2.h M2.c
 OBJETOS_M2 = M2.o
 
-DEPENDENCIAS_R2 = R2.c
+DEPENDENCIAS_R2 = utils.h R2.h R2.c
 OBJETOS_R2 = R2.o
 
-DEPENDENCIAS_S2 = S2.c
+DEPENDENCIAS_S2 = utils.h S2.h S2.c
 OBJETOS_S2 = S2.o
 
-DEPENDENCIAS_M4 = M4.c
-OBJETOS_M4 = M4.o
+ALL: M2 R2 S2
 
 # Compilação do Simulador
 %.o: %.c $(DEPENDENCIAS_M2)
@@ -36,10 +34,4 @@ R2: $(OBJETOS_R2)
 %.o: %.c $(DEPENDENCIAS_S2)
 	$(CC) -c -o $@ $<
 S2: $(OBJETOS_S2)
-	gcc -o $@ $^ -lm -Wall -Wextra -Werror -std=c99
-
-# Compilação do Editor de Macros
-%.o: %.c $(DEPENDENCIAS_M4)
-	$(CC) -c -o $@ $<
-M4: $(OBJETOS_M4)
 	gcc -o $@ $^ -lm -Wall -Wextra -Werror -std=c99
