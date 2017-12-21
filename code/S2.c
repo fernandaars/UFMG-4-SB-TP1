@@ -213,7 +213,7 @@ int main(int argc, char *argv[]) {
 
     fclose(input);
     fclose(output);
-    printf("[+] File '%s' assembled successfully\n", argv[1]);
+    printf("S2: Arquivo montado! \n");
 
     return 0;
 }
